@@ -1,11 +1,27 @@
+@charset "UTF-8";
+
+/*------------------------------------*\
+STYLES.CSS
+\*------------------------------------*/
+
+/**
+ * Base
+ */
+@import "normalize";
+@import "vars";
+@import "mixins";
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600');
+
+
 body {
   font-family: 'Source Sans Pro',Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
+  font-size: $font-size;
+  font-weight: 300;
   color: black;
   max-width: 1024px;
   margin: 0 auto;
-  background-color:rgb(221, 221, 221);
+  background-color:$background;
 }
 
 .header {
@@ -35,7 +51,7 @@ body {
     flex-wrap: wrap;
     margin-top: 10px;
 
-    @media only screen and (min-width: "1024px") { 
+    @media only screen and (min-width: $desktop) { 
       margin-top: 0;
     }
 
@@ -71,7 +87,7 @@ body {
   transition: color 0.2s linear, background-color 0.2s linear;
   margin-left: 10px;
 
-  @media only screen and (min-width: "1024px") { 
+  @media only screen and (min-width: $desktop) { 
     margin-left: 20px;
   }
 
@@ -79,7 +95,7 @@ body {
     font-size: 12px;
     padding: 11px 7px;
 
-    @media only screen and (min-width: "1024px") { 
+    @media only screen and (min-width: $desktop) { 
       font-size: 14px;
       padding: 17px 24px;
     }
@@ -100,7 +116,7 @@ body {
       border: 2px solid;
       background: transparent;
 
-      @media only screen and (min-width: "1024px") { 
+      @media only screen and (min-width: $desktop) { 
         padding: 14px 24px;
       }
     }

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-var PropTypes = require('prop-types');
+import propTypes from 'prop-types';
 
 function LocationGrid (props) {
     return(
@@ -97,10 +97,9 @@ class FilterInput extends React.Component {
     }
   }
   
-  FilterInput.PropTypes = {
-    id: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-    onSubmit: PropTypes.func.isRequired
+  FilterInput.propTypes = {
+    id: propTypes.string.isRequired,
+    onSubmit: propTypes.func.isRequired
   }
 
 export default class AllLocations extends React.Component {

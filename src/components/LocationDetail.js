@@ -87,7 +87,7 @@ export default class LocationDetail extends React.Component {
                 {!this.state.merchantLocation
                     ? <div className="header">
                             <div className="title">Level<span>Up</span> Merchant Locations</div>
-                            <Link className="btn btn-filter btn-lg btn-detail" to={`/`} onClick={this.resetResults}>Reload Data</Link>
+                            <Link className="btn btn-filter btn-lg btn-detail" to={`/`} onClick={this.props.getLocations}>Reload Data</Link>
                         </div>
                     : <div>
                         <div className="header">

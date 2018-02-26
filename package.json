@@ -1,32 +1,42 @@
 {
   "name": "LevelUp_Coding_Challenge",
   "version": "1.0.0",
-  "description": "",
+  "description": "LevelUp_Coding_Challenge",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnmclaughlin/levelup"
+  },
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server -d --hot --config webpack.config.js --watch",
+    "test": "jest",
     "production": "NODE_ENV=production webpack"
   },
   "keywords": [],
   "author": "John McLaughlin",
   "license": "ISC",
   "devDependencies": {
-    "axios": "^0.16.2",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
+    "babel-jest": "^22.4.1",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.5",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
     "image-webpack-loader": "^3.3.1",
+    "jest": "^22.4.2",
+    "jest-cli": "^22.4.2",
     "node-sass": "^4.5.3",
     "optimize-css-assets-webpack-plugin": "^3.1.1",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.2",
-    "react-router-dom": "4.1.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-test-renderer": "^16.2.0",
+    "regenerator-runtime": "^0.11.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "uglifyjs-webpack-plugin": "^0.4.6",
@@ -37,8 +47,6 @@
     "axios": "^0.17.1",
     "leaflet": "^1.3.1",
     "prop-types": "^15.6.0",
-    "react": "^15.6.2",
-    "react-addons-css-transition-group": "^15.6.2",
     "react-leaflet": "^1.8.0"
   }
 }

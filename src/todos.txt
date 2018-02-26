@@ -1,3 +1,0 @@
-1. Add React Transitions
-2. Rework condidtional around lond restaurant names
-3. Add unit tests
