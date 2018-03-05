@@ -15,3 +15,4 @@
     * food category
 9. Clean up NPM install warnings
 10. Rewrite CSS as BEM
+11. ESLINT/AirBNB
