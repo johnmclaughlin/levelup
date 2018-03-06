@@ -1,24 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import utils from '../utils/utils';
 
 const LocationGrid = props => (
 
   <ul className="location-list">
     {props.locations.map((location) => {
                 const site = location.location;
-                let merchantName;
-
-                // A little conditional rendering to keep titles clean
-                if (site.merchant_name.includes('Caffè Nero')) {
-                    merchantName = 'Caffè Nero';
-                } else if (site.merchant_name.includes('Formaggio Kitchen')) {
-                    merchantName = 'Formaggio Kitchen';
-                } else if (site.merchant_name.includes('Flame Cafe')) {
-                    merchantName = 'Flame Cafe';
-                } else {
-                    merchantName = site.merchant_name;
-                }
+                const merchantName = utils.trimNames(site.merchant_name);
 
                 return (
                   <li key={site.merchant_name} className="location-item">

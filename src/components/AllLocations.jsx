@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import FilterInput from './FilterInput';
 import LocationGrid from './LocationGrid';
 import Button from './Button';
-import { isPrivate } from 'ip';
+import utils from '../utils/utils';
 
 export default class AllLocations extends React.Component {
   constructor(props) {
@@ -17,8 +17,8 @@ export default class AllLocations extends React.Component {
   }
 
   handleSubmit(userInput) {
-    const filteredInput = this.props.locations.filter(e =>
-      e.location.merchant_name.toLowerCase().startsWith(userInput.toLowerCase()));
+    const filteredInput = utils.filteredInput(this.props.locations, userInput);
+
     this.setState(() => {
       const newState = {
         userSubmit: 'Filter by restaurant name',
@@ -39,7 +39,7 @@ export default class AllLocations extends React.Component {
   }
 
   render() {
-    const locations = this.state.filteredLocations.length > 0 ? this.state.filteredLocations : this.props.locations;
+    const locations = utils.filteredPresent(this.state.filteredLocations, this.props.locations);
     return (
       <div>
         <div className="header">

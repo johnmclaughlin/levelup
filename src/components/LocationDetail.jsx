@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Detail from './Detail';
+import utils from '../utils/utils';
 
 export default class LocationDetail extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ export default class LocationDetail extends React.Component {
 
   componentWillMount() {
     const { id } = this.props.match.params;
-    const location = this.props.locations.filter(e => e.location.id.toString() === id.toString());
+    const location = utils.getMerchantLocation(this.props.locations, id);
     this.setState(() => ({
       merchantLocation: location[0].location,
     }));
