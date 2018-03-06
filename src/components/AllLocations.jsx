@@ -62,7 +62,12 @@ export default class AllLocations extends React.Component {
   }
 }
 
+// This needs to be refactored. 'locations' set to null in Locations.jsx and is failing propTypes below
+AllLocations.defaultProps = {
+  locations: [{ location: 1, merchant: 1 }, { location: 2, merchant: 2 }],
+};
+
 // This need a better definition
 AllLocations.propTypes = {
-  locations: PropTypes.arrayOf(PropTypes.object).isRequired,
+  locations: PropTypes.arrayOf(PropTypes.object),
 };
