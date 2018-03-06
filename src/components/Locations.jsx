@@ -14,7 +14,7 @@ export default class Locations extends React.Component {
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.getLocations();
   }
 
@@ -34,7 +34,7 @@ export default class Locations extends React.Component {
         <Route
           path="/:id"
           render={props =>
-            <LocationDetail {...props}locations={this.state.locations} getLocations={() => this.getLocations()} />}
+            <LocationDetail {...props} locations={this.state.locations} getLocations={() => this.getLocations()} />}
         />
       </Switch>
     );

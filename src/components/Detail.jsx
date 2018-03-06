@@ -71,9 +71,14 @@ const Detail = (props) => {
   );
 };
 
-// This need a better definition
+// This need a better definition - not very specfic at all!
 Detail.propTypes = {
-  location: PropTypes.object.isRequired,
+  location: PropTypes.objectOf(PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.bool,
+    PropTypes.array,
+  ])).isRequired,
 };
 
 export default Detail;

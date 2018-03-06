@@ -38,7 +38,7 @@ const LocationGrid = props => (
 
 // This need a better definition
 LocationGrid.propTypes = {
-  locations: PropTypes.array.isRequired,
+  locations: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default LocationGrid;

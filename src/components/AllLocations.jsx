@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import FilterInput from './FilterInput';
 import LocationGrid from './LocationGrid';
 import Button from './Button';
+import { isPrivate } from 'ip';
 
 export default class AllLocations extends React.Component {
   constructor(props) {
@@ -63,5 +64,5 @@ export default class AllLocations extends React.Component {
 
 // This need a better definition
 AllLocations.propTypes = {
-  locations: PropTypes.array.isRequired,
+  locations: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

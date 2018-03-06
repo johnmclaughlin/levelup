@@ -65,7 +65,7 @@ LocationDetail.defaultProps = {
 
 // This need a better definition for locations
 LocationDetail.propTypes = {
-  locations: PropTypes.array.isRequired,
+  locations: PropTypes.arrayOf(PropTypes.object).isRequired,
   getLocations: PropTypes.func.isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
