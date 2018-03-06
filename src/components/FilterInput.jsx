@@ -6,7 +6,6 @@ export default class FilterInput extends React.Component {
     super(props);
     this.state = {
       userInput: '',
-      filteredLocations: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -14,7 +13,7 @@ export default class FilterInput extends React.Component {
   }
 
   handleChange(event) {
-    const value = event.target.value;
+    const { value } = event.target;
     this.setState(() => ({
       userInput: value,
     }));
@@ -33,9 +32,6 @@ export default class FilterInput extends React.Component {
   render() {
     return (
       <form className="filter-results" onSubmit={this.handleSubmit}>
-        <label className="filter-label" htmlFor="userInput">
-          {this.props.label}
-        </label>
         <input
           id="userInput"
           placeholder="Filter by restaurant name"

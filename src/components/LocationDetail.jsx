@@ -11,16 +11,8 @@ export default class LocationDetail extends React.Component {
     };
   }
 
-  // componentWillMount() {
-  //   const { id } = this.props.match.params;
-  //   const location = this.props.locations.filter(e => e.location.id === id);
-  //   this.setState(() => ({
-  //     merchantLocation: location[0].location,
-  //   }));
-  // }
-
   componentWillMount() {
-    const id = this.props.match.params.id;
+    const { id } = this.props.match.params;
     const location = this.props.locations.filter(e => e.location.id.toString() === id.toString());
     this.setState(() => ({
       merchantLocation: location[0].location,
@@ -31,24 +23,53 @@ export default class LocationDetail extends React.Component {
     return (
       <div>
         {!this.state.merchantLocation
-                    ? <div className="header">
-                      <div className="title">Level<span>Up</span> Merchant Locations</div>
-                      <Link className="btn btn-filter btn-lg btn-detail" to="/" href="/" onClick={this.props.getLocations}>Reload Data</Link>
-                      </div>
-                    : <div>
-                      <div className="header">
-                        <div className="title">Level<span>Up</span> Merchant Locations</div>
-                        <Link className="btn btn-filter btn-lg btn-detail" to="/" href="/">Back to your results</Link>
-                      </div>
-                      <Detail location={this.state.merchantLocation} />
-                    </div>
+          ?
+            <div className="header">
+              <div className="title">Level<span>Up</span> Merchant Locations</div>
+              <Link
+                className="btn btn-filter btn-lg btn-detail"
+                to="/"
+                href="/"
+                onClick={this.props.getLocations}
+              >
+              Reload Data
+              </Link>
+            </div>
+          :
+            <div>
+              <div className="header">
+                <div className="title">Level<span>Up</span> Merchant Locations</div>
+                <Link
+                  className="btn btn-filter btn-lg btn-detail"
+                  to="/"
+                  href="/"
+                >
+                Back to your results
+                </Link>
+              </div>
+              <Detail location={this.state.merchantLocation} />
+            </div>
                 }
       </div>
     );
   }
 }
 
-// This need a better definition
+LocationDetail.defaultProps = {
+  match: {
+    param: {
+      id: 8493,
+    },
+  },
+};
+
+// This need a better definition for locations
 LocationDetail.propTypes = {
   locations: PropTypes.array.isRequired,
+  getLocations: PropTypes.func.isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }),
+  }),
 };

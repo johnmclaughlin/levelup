@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import FilterInput from './FilterInput';
 import LocationGrid from './LocationGrid';
@@ -61,3 +60,8 @@ export default class AllLocations extends React.Component {
     );
   }
 }
+
+// This need a better definition
+AllLocations.propTypes = {
+  locations: PropTypes.array.isRequired,
+};

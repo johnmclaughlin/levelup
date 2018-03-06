@@ -42,10 +42,24 @@ const Detail = (props) => {
             <li>Accepts tips on pickup</li>
                     }
           {props.location.delivery_menu_url !== null &&
-            <li><Link className="external-link" href={props.location.delivery_menu_url} to={props.location.delivery_menu_url}>Our Delivery Menu &#8594;</Link></li>
+            <li>
+              <Link
+                className="external-link"
+                href={props.location.delivery_menu_url}
+                to={props.location.delivery_menu_url}
+              >Our Delivery Menu &#8594;
+              </Link>
+            </li>
                     }
           {props.location.facebook_url !== null &&
-            <li><Link className="external-link" href={props.location.facebook_url} to={props.location.facebook_url}>Our Facebook Page &#8594;</Link></li>
+            <li>
+              <Link
+                className="external-link"
+                href={props.location.facebook_url}
+                to={props.location.facebook_url}
+              >Our Facebook Page &#8594;
+              </Link>
+            </li>
                     }
           {props.location.hours !== '' &&
             <li>Hours: {props.location.hours}</li>
