@@ -140,6 +140,10 @@ a.btn {
 ul.location-list {
   list-style: none;
   padding-left: 0;
+
+  li {
+    margin-bottom: 10px;
+  }
 }
 
 .avatar {
@@ -153,7 +157,7 @@ ul.location-list {
   &-name {
     background: rgba(0, 0, 0, 0.8);
       position: absolute;
-      margin-top: -40px;
+      margin-top: -38px;
       color: white;
       font-size: 14px;
       width: 160px;
@@ -178,7 +182,6 @@ ul.location-list {
       color: white;
       margin-bottom: 0;
       align-self: auto;
-
 
       @media only screen and (min-width: $tablet) { 
         width: 100%;
