@@ -9,7 +9,7 @@ export default class Locations extends React.Component {
     super(props);
     this.state = {
       // eslint-disable-next-line
-      url: 'https://gist.githubusercontent.com/aripollak/2590fb80d71d2dc136a315cf4b608537/raw/dbd05012e9afd0d2064d33bda1640262f976f4f1/locations.json',
+      url: 'https://api.thelevelup.com/v15/locations',
       locations: null,
     };
   }

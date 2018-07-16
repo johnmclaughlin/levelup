@@ -2,7 +2,8 @@ import axios from 'axios';
 
 module.exports = {
   fetchMerchantLocations: (url) => {
-    const encodedURI = window.encodeURI(url);
+    // const encodedURI = window.encodeURI(url);
+    const encodedURI = 'merchant_locations.json';
     return axios.get(encodedURI)
       .then((response) => {
       // Alphabetically sort response by Merchant Name
